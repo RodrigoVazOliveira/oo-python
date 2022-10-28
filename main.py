@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from conta_bancaria import create_account
+from date import Date
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    number = int(input("Informe o numero da conta bancarioa: "))
+    holder = input("Informe o nome do dono da conta bancária: ")
+    balance =  float(input("Digite o saldo atual: "))
+    limit = float(input("Digite o limite da conta: "))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    account = create_account(number, holder, balance, limit)
+    print(account)
+
+    date = Date(17, 11, 1991)
+    date.format_date()

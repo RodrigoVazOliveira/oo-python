@@ -8,15 +8,6 @@ class Account:
         self.__balance = balance
         self.__limit = limit
 
-    def get_number(self):
-        return self.__number
-
-    def get_holder(self):
-        return self.__holder
-
-    def get_balance(self):
-        return self.__balance
-
     @property
     def limit(self):
         return self.__limit
@@ -24,6 +15,10 @@ class Account:
     @limit.setter
     def limit(self, limit):
         self.__limit = limit
+
+    @staticmethod
+    def code_bank():
+        return "001"
 
     def statement(self):
         print("O saldo atual e de R$ {}".format(self.__balance))

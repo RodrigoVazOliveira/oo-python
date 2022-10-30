@@ -20,5 +20,7 @@ if __name__ == '__main__':
 
     print(accountOne, accountTwo, sep="\n")
 
+    print("Código de banco: {}".format(accountOne.code_bank))
+
     date = Date(17, 11, 1991)
     date.format_date()

@@ -23,13 +23,16 @@ class Account:
 
     @limit.setter
     def limit(self, limit):
-        return self.__limit = list
+        self.__limit = limit
 
     def statement(self):
         print("O saldo atual e de R$ {}".format(self.__balance))
 
     def withdraw(self, value):
-        self.__balance -= value
+        if self.__can_withdraw(value):
+            self.__balance -= value
+        else:
+            raise Exception("Não é possível sacar valores maiores que o saldo disponível")
 
     def deposit(self, value):
         self.__balance += value
@@ -37,6 +40,11 @@ class Account:
     def transfer(self, destination, value):
         self.withdraw(value)
         destination.deposit(value)
+
+    def __can_withdraw(self, value_withdraw):
+        value_available = self.__balance + self.__limit
+
+        return value_withdraw <= value_available
 
     def __str__(self) -> str:
         return json.dumps(self.__dict__)

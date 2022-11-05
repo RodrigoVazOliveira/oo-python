@@ -1,3 +1,5 @@
+import json
+
 from films_records.program import Program
 
 
@@ -14,3 +16,6 @@ class Serie(Program):
     @classmethod
     def get_likes(cls):
         return f"Essa e a quantidade de likes {cls.like}"
+
+    def __str__(self):
+        return json.dumps(self.__dict__)

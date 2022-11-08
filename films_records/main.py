@@ -14,4 +14,7 @@ if __name__ == '__main__':
     for program in playlist:
         print(program)
 
+    print(harry_potter in playlist)
+    print(playlist[1])
+
     print(f"tamanho da lista: {len(playlist)}")

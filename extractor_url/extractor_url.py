@@ -1,11 +1,12 @@
 import re
 
+
 class ExtractorURL:
     def __init__(self, url):
-        self.__url = self.__sanitization_url(url)
+        self.__url = self.sanitization_url(url)
         self.__validate__url()
 
-    def __sanitization_url(self, url):
+    def sanitization_url(self, url):
         if type(url) == str:
             return url.strip()
         else:
@@ -32,15 +33,21 @@ class ExtractorURL:
 
         return url_parameters
 
+    def validate_index_sepator(self, index_sepator, parameters, index_value):
+        if index_sepator == -1:
+            return parameters[index_value:]
+        return parameters[index_value:index_sepator]
+
     def get_value_parameter(self, parameter):
         parameters = self.get_url_parameters()
         index_parameter = parameters.find(parameter)
         index_value = index_parameter + len(parameter) + 1
         index_separetor = parameters.find('&', index_value)
 
-        return self.__validate_index_sepator(index_separetor, parameters, index_value)
+        return self.validate_index_sepator(index_separetor, parameters, index_value)
 
-    def __validate_index_sepator(self, index_sepator, parameters, index_value):
-        if index_sepator == -1:
-            return parameters[index_value:]
-        return parameters[index_value:index_sepator]
+    def __len__(self):
+        return len(self.__url)
+
+    def __str__(self):
+        return self.__url

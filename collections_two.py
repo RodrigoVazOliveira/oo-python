@@ -127,13 +127,28 @@ my_text = "Bem vindo meu nome é Guilherme eu gosto muito de nomes e tenho o meu
 my_text = my_text.lower()
 
 # contando palavras com um dicionário
-appearances = {}
+from collections import defaultdict
+
+appearances = defaultdict(int)
+
 for word in my_text.split():
-    yet = appearances.get(word, 0)
-    appearances[word] = yet + 1
+    appearances[word] += 1
 
 print(appearances)
 
 
 
+# exemplo usando classes
+class Account:
+    def __init__(self):
+        print("Imprimindo uma conta...")
 
+accounts = defaultdict(Account)
+accounts[15]
+accounts[17]
+
+
+# usando contador
+from collections import Counter
+appearances = Counter(my_text.split())
+print(appearances)

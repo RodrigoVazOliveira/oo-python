@@ -152,3 +152,6 @@ accounts[17]
 from collections import Counter
 appearances = Counter(my_text.split())
 print(appearances)
+
+
+#

@@ -123,6 +123,16 @@ for key, value in appearances.items():
 
 print(["Palavra {}".format(key) for key in appearances.keys()])
 
+my_text = "Bem vindo meu nome é Guilherme eu gosto muito de nomes e tenho o meu cachorro e gosto muito de cachorro"
+my_text = my_text.lower()
+
+# contando palavras com um dicionário
+appearances = {}
+for word in my_text.split():
+    yet = appearances.get(word, 0)
+    appearances[word] = yet + 1
+
+print(appearances)
 
 
 

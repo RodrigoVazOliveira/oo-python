@@ -70,5 +70,60 @@ appearances = dict(Guilherme = 2, cachorro = 1)
 print(appearances)
 
 
+# adicionando novo elemento
+appearances["Rodrigo"] = 2
+
+# substituir o valor
+appearances["Guilherme"] = 4
+
+print(appearances)
+
+# remover um elemento
+del(appearances["Rodrigo"])
+
+print(appearances)
+
+print(f"Existe rodrigo no dicinário: {'Rodrigo' in appearances}")
+print(f"Existe rodrigo no dicinário: {'Guilherme' in appearances}")
+
+
+for element in appearances:
+    print(element)
+
+
+# somente a chaves
+for element in appearances.keys():
+    print(element)
+
+
+# somente valores
+for element in appearances.values():
+    print(element)
+
+
+# verificando se existe um valor no dicionário
+print(1 in appearances.values())
+
+
+# chave valor
+for element in appearances.keys():
+    print(element, appearances[element])
+
+# ou
+
+for element in appearances.items():
+    print(element)
+
+# ou separando
+for key, value in appearances.items():
+    print(key, "=", value)
+
+
+# criando uma palavra\\
+
+print(["Palavra {}".format(key) for key in appearances.keys()])
+
+
+
 
 
